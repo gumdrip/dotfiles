@@ -1,0 +1,15 @@
+VimClojure
+YankRing.vim
+command-t
+html5.vim
+neocomplcache
+neosnippet
+nerdtree
+syntastic
+unite.vim
+vim-autoclose
+vim-fugitive
+vim-indent-guides
+vim-slime
+vimproc
+vimshell
