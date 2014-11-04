@@ -181,6 +181,33 @@ let NERDTreeShowHidden = 1
 " デフォルトでツリーを表示させる
 autocmd VimEnter * execute 'NERDTree'
 
+"デフォルトのzenkakusupaceを定義
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgray endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        " Zenkakuspaceをカラーファイルで設定するなら次は削除
+        autocmd ColorScheme     * call ZenkakuSpace()
+        "全角スペースのハイライト指定
+        autocmd VimEnter,WinEnter * match Zenkakuspace /  /
+        autocmd VimEnter,WinEnter * match Zenkakuspace '\%u3000'
+    augrup END
+call ZenkakuSpace()
+endif
+endfunction
+
+
+
+
+
+
+
+
+
+
+
 "挿入モード時、ステータスラインの色を変更
 """"""""""""""""""""""""""""""
 "
