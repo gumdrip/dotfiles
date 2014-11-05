@@ -54,8 +54,7 @@ dotfilesディレクトリ内にdotfilesLink.sh作成
 
 ~/dotfiles ディレクトリ構成
 
-~/dotfiles                  
-
+    ~/dotfiles                  
     ├── .git                    
     ├── .gitignore                
     ├── .vim                          
