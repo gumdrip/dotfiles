@@ -1,9 +1,6 @@
 dotfiles
 ========
 
-dotfiles
-========
-
 準備
 
     $ cd                                      
