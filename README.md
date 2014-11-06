@@ -77,7 +77,7 @@ dotfilesディレクトリ内にdotfilesLink.sh作成
 
 ファイルに書いて保存する。
 
-    .vim/bundle/
+    .vim/bundle/*
     .vim/.netrwhist
 
 
