@@ -125,3 +125,36 @@ dotfilesのファイルを更新した際は更新をコミットした後にプ
     $ git rm —cached [削除したいファイル] ファイルを残したまま管理対象から外す
    
 
+clorn したpcでも設定しないとお友達になれない
+
+    git add .
+    git commit -m 'first commit'
+    git remote add origin git@github.com:gumdrip/dotfiles.git
+    git push origin master
+
+git push でエラーが出た場合
+
+    To https://github.com/gumdrip/dotfiles.git
+     ! [rejected]        master -> master (non-fast-forward)
+    error: failed to push some refs to 'https://github.com/gumdrip/dotfiles.git'
+    hint: Updates were rejected because a pushed branch tip is behind its remote
+    hint: counterpart. If you did not intend to push that branch, you may want to
+    hint: specify branches to push or set the 'push.default' configuration variable
+    hint: to 'simple', 'current' or 'upstream' to push only the current branch.
+
+git helpみてこれをやった。
+
+    git branch temp2
+    git checkout temp2
+    git pull origin +master:temp2
+    git diff temp2 master
+    git checkout master
+    git merge temp2
+    $ git push git@github.com:gumdrip/dotfiles.git
+    
+    後から知ったが↓でもいけるみたいだがやっていない
+
+    git pull --commit
+    
+    
+    
