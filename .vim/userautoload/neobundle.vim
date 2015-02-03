@@ -23,6 +23,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'git://git.wincent.com/command-t.git'
+" Ruby向けにendを自動挿入してくれる
+NeoBundle 'tpope/vim-endwise'
 "NeoBundle 'https://bitbucket.org/kovisoft/slimv'"
 
 " NERDTreeを設定                  <----- 追記

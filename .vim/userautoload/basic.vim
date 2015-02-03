@@ -1,21 +1,20 @@
-" クリップボード共有
-set clipboard+=unnamedplus,unnamed
 
 " 環境設定系
 set title "編集中のファイル名を表示
 set expandtab
-set tabstop=4 "インデントをスペース4つ分に設定
-set softtabstop=4
-set shiftwidth=4
-set smartindent "オートインデント
+set tabstop=2 "インデントをスペース4つ分に設定
+set softtabstop=2
+set shiftwidth=2
+set smartindent "オートインデント"
+
 " シンタックスハイライト
 syntax on
 
 " エンコード
-set encoding=utf8
+set encoding=utf-8
 
 " ファイルエンコード
-set fileencoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
 " スクロールする時に下が見えるようにする
 set scrolloff=5
@@ -34,13 +33,6 @@ set backspace=indent,eol,start
 
 " ビープ音を消す
 set vb t_vb=
-
-"set novisualbell
-
-" OSのクリップボードを使う
-set guioptions+=a  "ビジュアルモードで選択したテキストがクリップボードにはいる
-
-"set clipboard=unnamedp,autoselect
 
 " 行番号を表示
 set number
@@ -138,20 +130,69 @@ let g:yankring_max_history = 10   "記録履歴10件
 let g:yankring_window_height = 13    "ウィンドウサイズ
 
 "括弧の自動入力
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-inoremap < <><LEFT>
-vnoremap { "zdi^V{<C-R>z<ESC>
-vnoremap [ "zdi^V[<C-R>z<ESC>
-vnoremap ( "zdi^V(<C-R>z<ESC>
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"inoremap < <><LEFT>
+"vnoremap { "zdi^V{<C-R>z<ESC>
+"vnoremap [ "zdi^V[<C-R>z<ESC>
+"vnoremap ( "zdi^V(<C-R>z<ESC>
+"vnoremap " "zdi^V"<C-R>z^V"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
+
+inoremap {{ {}<LEFT>
+inoremap [[ []<LEFT>
+inoremap (( ()<LEFT>
+inoremap "" ""<LEFT>
+inoremap '' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>}})]}}
+vnoremap ' "zdi'<C-R>z'<ESC>
+
+"[Editor]]
+" 改行文字
+"set ffs=unix,dos,mac
+  
+" デフォルトエンコーディング
+
+"set encoding=utf-8
+   
+" cvsの時は文字コードをeuc-jpに設定
+"autocmd FileType cvs :set fileencoding=euc-jp
+
+
+" 以下のファイルの時は文字コードをutf-8に設定
+"autocmd FileType svn :set fileencoding=utf-8
+"autocmd FileType js :set fileencoding=utf-8
+"autocmd FileType css :set fileencoding=utf-8
+"autocmd FileType html :set fileencoding=utf-8
+"autocmd FileType xml :set fileencoding=utf-8
+"autocmd FileType java :set fileencoding=utf-8
+"autocmd FileType scala :set fileencoding=utf-8                 
+
+""[Clipboard]
+"コピーしたものがレジスタにも入るようにする
+" http://nanasi.jp/articles/howto/editing/clipboard.html
+set clipboard=unnamed
+
+" ビジュアルモードで選択したテキストが、クリップボードに入るようにする
+set clipboard=autoselect
+"set clipboard+=autoselect
+ 
+" 上の両方
+"set clipboard=autoselect,unnamed
+  
+" 全部盛り
+" http://layzie.hatenablog.com/entry/20111013/1318438227
+set clipboard=unnamedplus,unnamed  
 
 "補完ウィンドウの設定 :help completeopt
 set completeopt=menuone
+
 
 "ポップアップメニューで表示される候補の数。初期値は100
 let g:neocomplcache_max_list = 20

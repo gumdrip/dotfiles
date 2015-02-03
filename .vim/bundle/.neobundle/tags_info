@@ -8,6 +8,7 @@ nerdtree
 syntastic
 unite.vim
 vim-autoclose
+vim-endwise
 vim-fugitive
 vim-indent-guides
 vim-slime
